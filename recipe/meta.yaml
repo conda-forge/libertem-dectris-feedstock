@@ -14,7 +14,7 @@ build:
   script:
    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
    - {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
   script_env:
    - LIBCLANG_PATH=$BUILD_PREFIX/lib  # [not win]
    - LIBCLANG_PATH=%LIBRARY_BIN%  # [win]

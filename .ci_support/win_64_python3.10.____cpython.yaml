@@ -15,4 +15,4 @@ python:
 target_platform:
 - win-64
 zeromq:
-- 4.3.4
+- 4.3.5
