@@ -1,5 +1,5 @@
 {% set name = "libertem-dectris" %}
-{% set version = "0.2.11" %}
+{% set version = "0.2.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,21 +7,21 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/libertem_dectris-{{ version }}.tar.gz
-  sha256: 49150f967e8cbe0dc0271713c573746d58ee3ade699de7feaf79ca12e2f6ceac
+  sha256: f44de61feb6d6c38143b9036f048d12d253ff92ab8c4966a38f2ef1a21edbbce
 
 build:
-  skip: True  # [py<37]
+  skip: true  # [py<37]
   script:
-   - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-   - {{ PYTHON }} -m pip install . -vv
-  number: 5
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+    - {{ PYTHON }} -m pip install . -vv
+  number: 0
   script_env:
-   - LIBCLANG_PATH=$BUILD_PREFIX/lib  # [not win]
-   - LIBCLANG_PATH=%LIBRARY_BIN%  # [win]
+    - LIBCLANG_PATH=$BUILD_PREFIX/lib # [not win]
+    - LIBCLANG_PATH=%LIBRARY_BIN% # [win]
 
 requirements:
   build:
-    - python  
+    - python
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -36,7 +36,7 @@ requirements:
     - numpy >=1.6.1,<2
     - zeromq
     - clang
-    - libclang    
+    - libclang
     - pip
   run:
     - python
