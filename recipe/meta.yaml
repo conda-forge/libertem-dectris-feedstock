@@ -1,5 +1,5 @@
 {% set name = "libertem-dectris" %}
-{% set version = "0.2.12" %}
+{% set version = "0.2.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/libertem_dectris-{{ version }}.tar.gz
-  sha256: f44de61feb6d6c38143b9036f048d12d253ff92ab8c4966a38f2ef1a21edbbce
+  sha256: 02b49e72fa46af475ad375e30e844bfe02d8be89ac7eafc7577aa6b37e341648
 
 build:
   skip: true  # [py<37]
