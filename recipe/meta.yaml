@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/libertem_dectris-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/libertem_dectris-{{ version }}.tar.gz
   sha256: 02b49e72fa46af475ad375e30e844bfe02d8be89ac7eafc7577aa6b37e341648
 
 build:
@@ -14,7 +14,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   script_env:
     - LIBCLANG_PATH=$BUILD_PREFIX/lib  # [not win]
     - LIBCLANG_PATH=%LIBRARY_BIN%  # [win]
