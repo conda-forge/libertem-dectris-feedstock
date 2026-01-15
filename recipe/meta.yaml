@@ -25,7 +25,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - rust >=1.66
+    - rust >=1.74
     - clang
     - libclang
     - cargo-bundle-licenses
@@ -41,6 +41,7 @@ requirements:
   run:
     - python
     - opentelemetry-api
+    - libiconv
 
 test:
   commands:
